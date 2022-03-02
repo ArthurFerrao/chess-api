@@ -18,7 +18,11 @@ cd chess-api
 ```bash
 pip install -r requirements.txt 
 ```
-5. Run:
+5. Make the migrations:
+```bash
+python manage.py migrate
+```
+6. Run:
 ```bash
 python manage.py runserver
 ```
