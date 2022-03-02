@@ -29,3 +29,69 @@ python manage.py runserver
 
 > Open http://localhost:8000 with your browser to see the result.
 You can [create a admin user](https://docs.djangoproject.com/en/1.8/intro/tutorial02/) and access the `/admin` path to see a friendly interface.
+
+## API endpoints to Pieces
+
+
+### GET
+- Return all pieces created:</br>
+Path `/pieces/`
+- Return the piece selected:</br>
+Path`/pieces/<id>/`
+
+### POST
+- Create a piece:</br>
+Path `/pieces/`</br>
+Body:
+    ```json
+    {
+        "name": "knight",
+        "color": "black"
+    }
+    ```
+- Update a piece:</br>
+Path `/pieces/<id>/`</br>
+Body:
+    ```json
+    {
+        "name": "knight",
+        "color": "black"
+    }
+    ```
+- Get the possible moves in two steps for the passed coordinate, if the piece is a knight:</br>
+Path `/pieces/<id>/moves/`</br>
+Body:
+    ```json
+    {
+        "coordinate": "a1"
+    }
+    ```
+
+## API endpoints to Board
+
+
+### GET
+- Return all boards created:</br>
+Path `/boards/`
+- Return the board selected:</br>
+Path`/boards/<id>/`
+
+### POST
+- Create a board:</br>
+Path `/boards/`</br>
+Body:
+    ```json
+    {
+        "rows": 8,
+        "columns": 8
+    }
+    ```
+- Update a board:</br>
+Path `/boards/<id>/`</br>
+Body:
+    ```json
+    {
+        "rows": 8,
+        "columns": 8
+    }
+    ```
